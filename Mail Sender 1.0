@@ -1,0 +1,16 @@
+import smtplib as s
+ob=s.SMTP('smtp.gmail.com',587)
+
+ob.starttls()
+
+ob.login("331008dsa@gmail.com","8109323980")
+
+sub=input("Enter the subject")
+subject=sub
+b=input("Enter the message")
+body=b
+message="subject:{}\n\n{}".format(subject,body)
+listofadd=input("Enter reciever's email address")
+ob.sendmail("331008dsa@gmail.com",listofadd,message)
+print("Sent successfully")
+ob.quit()
